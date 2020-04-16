@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Product</title>
+</head>
+<body>
+<div align="center">
+    <h1>Manager Infomation</h1>
+    <br>
+    <form method="get" action="search">
+        <input style="width: 300px ; height: 30px" placeholder="Search " type="text" name="keyword"/>
+        <input type="submit" value="Search"/>
+    </form>
+    <br>
+    <p>
+    <h1><a style="color: darkred; text-decoration: none" href="new">New Product</a></h1>
+    </p>
+    <hr>
+    <table border="1" cellpadding="5">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Name Product</th>
+            <th>Time Buy </th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tr th:each="u : ${product}">
+            <td th:text="${u.id}"></td>
+            <td th:text="${u.name}"></td>
+            <td th:text="${u.address}"></td>
+            <td th:text="${u.email}"></td>
+            <td th:text="${u.nameproduct}"></td>
+            <td th:text="${u.timebuy}"></td>
+            <td th:text="${u.price}"></td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
